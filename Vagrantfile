@@ -9,7 +9,7 @@ Vagrant::Config.run do |config|
   config.vm.define :puppetmaster do |config|
     config.vm.box       = "puppetmaster"
     config.vm.host_name = "puppetmaster.cloud.gwdg.de"
-    config.vm.customize ["modifyvm", :id, "--memory", 1024]
+    config.vm.customize ["modifyvm", :id, "--memory", 512]
 #    config.hosts.aliases = %w(puppetmaster.example.com)
 
     # Make puppetmaster use the swift modules as default
@@ -24,7 +24,7 @@ Vagrant::Config.run do |config|
   config.vm.define :proxy1 do |config|
     config.vm.box       = "ubuntu-12.04.2"
     config.vm.host_name = "swift-proxy-1.cloud.gwdg.de"
-    config.vm.customize ["modifyvm", :id, "--memory", 1024] 
+    config.vm.customize ["modifyvm", :id, "--memory", 512] 
     config.vm.network :hostonly, "10.1.255.3",  :netmask => "255.255.0.0"
   end
 
@@ -32,7 +32,7 @@ Vagrant::Config.run do |config|
   config.vm.define :storage1 do |config|
     config.vm.box       = "ubuntu-12.04.2"
     config.vm.host_name = "swift-storage-1.cloud.gwdg.de"
-    config.vm.customize ["modifyvm", :id, "--memory", 1024] 
+    config.vm.customize ["modifyvm", :id, "--memory", 512] 
     config.vm.network :hostonly, "10.1.255.11",  :netmask => "255.255.0.0"
   end
 
@@ -40,7 +40,7 @@ Vagrant::Config.run do |config|
   config.vm.define :storage2 do |config|
     config.vm.box       = "ubuntu-12.04.2"
     config.vm.host_name = "swift-storage-2.cloud.gwdg.de"
-    config.vm.customize ["modifyvm", :id, "--memory", 1024] 
+    config.vm.customize ["modifyvm", :id, "--memory", 512] 
     config.vm.network :hostonly, "10.1.255.12",  :netmask => "255.255.0.0"
   end
 
