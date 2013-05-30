@@ -11,6 +11,10 @@ Vagrant::Config.run do |config|
     config.vm.host_name = "puppetmaster.cloud.gwdg.de"
     config.vm.customize ["modifyvm", :id, "--memory", 1024]
 #    config.hosts.aliases = %w(puppetmaster.example.com)
+
+    # Make puppetmaster use the swift modules as default
+    config.vm.share_folder "swift", "/etc/puppet/modules", "../swift"
+
     config.vm.network :hostonly, "10.1.255.2",  :netmask => "255.255.0.0"
 #    config.vm.forward_port 80,   8080
 #    config.vm.forward_port 443,  8443
