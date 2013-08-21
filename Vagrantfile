@@ -9,7 +9,7 @@ Vagrant::Config.run do |config|
   config.vm.define :puppetmaster do |config|
     config.vm.box       = "puppetmaster"
     config.vm.host_name = "puppetmaster.cloud.gwdg.de"
-    config.vm.customize ["modifyvm", :id, "--memory", 512]
+    config.vm.customize ["modifyvm", :id, "--memory", 768]
 #    config.hosts.aliases = %w(puppetmaster.example.com)
 
     # Make puppetmaster use the swift modules as default
